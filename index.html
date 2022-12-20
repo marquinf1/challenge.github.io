@@ -1,49 +1,60 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-
 <html>
-
 <head>
-    <title>Criptografia</title>
+	<title>Criptografia de Palavras</title>
 </head>
-
 <body>
-    <h1>Criptografia de Palavras</h1>
-    <form id="formulario">
-        <label for="texto">Texto:</label><br>
-        <textarea id="texto" rows="4" cols="50"></textarea><br>
-        <label for="chave">Chave:</label><br>
-        <input type="number" id="chave"><br><br>
-        <button type="button" onclick="criptografa()">Criptografar</button>
-    </form>
-    <br>
-    <p id="resultado"></p>
-    <script>
-        function criptografa() {
-            // Lê o texto e a chave do formulário
-            var texto = document.getElementById("texto").value;
-            var chave = document.getElementById("chave").value;
-            // Criptografa o texto usando a criptografia de César
-            var texto_cifrado = "";
-            for (var i = 0; i < texto.length; i++) {
-                var caractere = texto[i];
-                if (caractere.isalpha()) {
-                    var codigo = caractere.charCodeAt(0);
-                    if (caractere.isupper()) {
-                        codigo = ((codigo - 65 + chave) % 26) + 65;
-                    } else {
-                        codigo = ((codigo - 97 + chave) % 26) + 97;
-                    }
-                    caractere_cifrado = String.fromCharCode(codigo);
-                } else {
-                    caractere_cifrado = caractere;
-                }
-                texto_cifrado += caractere_cifrado;
-            }
-            // Exibe o texto cifrado na página
-            document.getElementById("resultado").innerHTML = texto_cifrado;
-        }
-    </script>
+	<h1>Criptografia de Palavras</h1>
+	<form>
+		<label for="palavra">Insira a palavra a ser criptografada:</label><br>
+		<input type="text" id="palavra"><br>
+		<button type="button" onclick="criptografar()">Criptografar</button>
+	</form> 
+	<p id="resultado"></p>
 </body>
+<script>
+function criptografar() {
+	// obtém a palavra a ser criptografada
+	var palavra = document.getElementById("palavra").value;
 
+	// cria um dicionário de substituição de letras
+	var dicionario = {
+		a: "z",
+		b: "y",
+		c: "x",
+		d: "w",
+		e: "v",
+		f: "u",
+		g: "t",
+		h: "s",
+		i: "r",
+		j: "q",
+		k: "p",
+		l: "o",
+		m: "n",
+		n: "m",
+		o: "l",
+		p: "k",
+		q: "j",
+		r: "i",
+		s: "h",
+		t: "g",
+		u: "f",
+		v: "e",
+		w: "d",
+		x: "c",
+		y: "b",
+		z: "a"
+	};
+
+	// criptografa a palavra
+	var criptografada = "";
+	for (var i = 0; i < palavra.length; i++) {
+		criptografada += dicionario[palavra[i]];
+	}
+
+	// exibe a palavra criptografada
+	document.getElementById("resultado").innerHTML = "Palavra criptografada: " + criptografada;
+}
+</script>
 </html>
