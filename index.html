@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Criptografia de Palavras</title>
-    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 	<h1>Criptografia de Palavras</h1>
 	<form>
-		<label for="palavra">Insira a palavra a ser criptografada:</label><br>
+		<label for="palavra">Insira a palavra a ser criptografada:</label><br><br>
 		<input type="text" id="palavra"><br>
-		<button type="button" onclick="criptografar()">Criptografar</button>
-	</form> 
+		<button type="button" onclick="criptografar()">Criptografar</button><br>
+
+		<label for="palavra1"><br><br><br>Insira a palavra a ser descriptografada:</label><br><br>
+		<input type="text" id="palavra1"><br>
+		<button type="button" onclick="criptografar()">Descriptografar</button><br>
+	</form>
 	<p id="resultado"></p>
-    <script src="script.js"></script>
+	<script src="script.js"></script>
 </body>
+
 </html>
