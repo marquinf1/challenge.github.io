@@ -11,13 +11,18 @@
 	<form>
 		<label for="palavra">Insira a palavra a ser criptografada:</label><br><br>
 		<input type="text" id="palavra"><br>
-		<button type="button" onclick="criptografar()">Criptografar</button><br>
+		<br><button type="button" onclick="criptografar()">Criptografar</button><br>
+		<br><button class="copiar" onclick="copiarTexto()">Copiar texto</button>
 
-		<label for="palavra1"><br><br><br>Insira a palavra a ser descriptografada:</label><br><br>
-		<input type="text" id="palavra1"><br>
-		<button type="button" onclick="criptografar()">Descriptografar</button><br>
+		<label for="palavra_des"><br><br><br>Insira a palavra a ser descriptografada:</label><br><br>
+		<input type="texto" id="palavra_des"><br>
+		<br><button type="button" onclick="descriptografar()">Descriptografar</button><br>
+		<br><button class="copiar" onclick="copiarTexto()">Copiar texto</button>
 	</form>
+	
 	<p id="resultado"></p>
+	<p id="resultado_des"></p>
+
 	<script src="script.js"></script>
 </body>
 

@@ -12,11 +12,19 @@ body {
   input {
     width: 200px;
     margin-right: 8px;
+    border: 2px solid black;
+    border-radius: 5px;
   }
   
   button {
     background-color: blue;
     color: white;
+  }
+  
+  button.copiar {
+    background-color: rgb(4, 109, 30);
+    color: white;
+    font-size: 10px;
   }
   
   #resultado {
